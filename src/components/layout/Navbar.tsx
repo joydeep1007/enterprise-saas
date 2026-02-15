@@ -18,9 +18,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-[#111827]/80 backdrop-blur-xl border-b border-white/10 supports-[backdrop-filter]:bg-[#111827]/60"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#111827]/90 to-[#111827]/70 backdrop-blur-2xl border-b border-white/20 supports-[backdrop-filter]:bg-[#111827]/60 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/5 before:to-transparent before:pointer-events-none"
       role="navigation"
       aria-label="Main navigation"
+      style={{ backdropFilter: 'blur(24px) saturate(180%)', WebkitBackdropFilter: 'blur(24px) saturate(180%)' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -30,7 +31,7 @@ export default function Navbar() {
             className="flex items-center gap-3 group"
             aria-label="ValuEZ Tech — Home"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-glass-blue to-accent-glow flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-glass-blue to-accent-glow flex items-center justify-center shadow-[0_4px_16px_rgba(59,130,246,0.3)] group-hover:shadow-[0_6px_24px_rgba(59,130,246,0.5)] transition-all duration-300">
               <span className="text-white font-bold text-lg">V</span>
             </div>
             <span className="text-xl font-bold text-white group-hover:text-glass-blue transition-colors">
@@ -101,7 +102,7 @@ export default function Navbar() {
         }`}
         role="menu"
       >
-        <div className="px-6 py-4 space-y-3 border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+        <div className="px-6 py-4 space-y-3 border-t border-white/10 bg-gradient-to-b from-dark/95 to-dark/90 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]" style={{ backdropFilter: 'blur(24px) saturate(180%)', WebkitBackdropFilter: 'blur(24px) saturate(180%)' }}>
           {navLinks.map((link) => (
             <Link
               key={link.href}

@@ -17,9 +17,9 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "btn-glow text-white font-semibold",
   secondary:
-    "bg-white/10 backdrop-blur-lg border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300",
+    "bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/30 text-white font-semibold hover:bg-gradient-to-br hover:from-white/20 hover:to-white/10 hover:border-white/40 hover:shadow-[0_8px_24px_rgba(255,255,255,0.1),inset_0_1px_0_0_rgba(255,255,255,0.2)] transition-all duration-300",
   outline:
-    "border-2 border-glass-blue text-glass-blue font-semibold hover:bg-glass-blue/10 transition-all duration-300",
+    "border-2 border-glass-blue/80 text-glass-blue font-semibold hover:bg-glass-blue/10 hover:border-glass-blue hover:shadow-[0_0_24px_rgba(59,130,246,0.3)] transition-all duration-300",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

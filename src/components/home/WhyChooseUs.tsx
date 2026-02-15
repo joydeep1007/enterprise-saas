@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
             {bulletPoints.map((point, i) => (
               <div key={i} className="flex gap-4">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-8 h-8 rounded-lg bg-glass-blue/10 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-glass-blue/15 to-glass-blue/5 border border-glass-blue/30 flex items-center justify-center shadow-[0_4px_12px_rgba(59,130,246,0.15)]">
                     <svg
                       className="w-4 h-4 text-glass-blue"
                       fill="none"

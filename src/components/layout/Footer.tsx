@@ -70,7 +70,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6" aria-label="ValuEZ Tech — Home">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-glass-blue to-accent-glow flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-glass-blue to-accent-glow flex items-center justify-center shadow-[0_4px_16px_rgba(59,130,246,0.3)]">
                 <span className="text-white font-bold text-lg">V</span>
               </div>
               <span className="text-xl font-bold text-white">
@@ -87,7 +87,7 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-text-muted hover:text-glass-blue hover:bg-glass-blue/10 transition-all"
+                  className="w-10 h-10 rounded-xl bg-gradient-to-br from-white/8 to-white/4 backdrop-blur-xl border border-white/10 flex items-center justify-center text-text-muted hover:text-glass-blue hover:bg-gradient-to-br hover:from-glass-blue/15 hover:to-glass-blue/5 hover:border-glass-blue/30 hover:shadow-[0_4px_16px_rgba(59,130,246,0.2)] transition-all duration-300"
                   aria-label={social.label}
                 >
                   {social.icon}
