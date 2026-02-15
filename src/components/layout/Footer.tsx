@@ -70,9 +70,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6" aria-label="ValuEZ Tech — Home">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-glass-blue to-accent-glow flex items-center justify-center shadow-[0_4px_16px_rgba(59,130,246,0.3)]">
-                <span className="text-white font-bold text-lg">V</span>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="ValuEZ Tech Logo" 
+                className="w-[72px] h-[72px] object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.4)]"
+                style={{ background: 'transparent' }}
+              />
               <span className="text-xl font-bold text-white">
                 ValuEZ<span className="text-glass-blue">Tech</span>
               </span>
