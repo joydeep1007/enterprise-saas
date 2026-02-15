@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useRef } from "react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Button from "@/components/ui/Button";
-
-export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Explore ValuEZ Tech enterprise services — digital transformation, cloud solutions, AI analytics, cybersecurity, and managed IT.",
-};
 
 const services = [
   {
@@ -98,6 +94,53 @@ const services = [
 ];
 
 export default function ServicesPage() {
+  const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    serviceRefs.current.forEach((ref, index) => {
+      if (!ref) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add animation classes when element is visible with stagger
+              const contentDiv = entry.target.querySelector('.service-content');
+              const capabilitiesDiv = entry.target.querySelector('.service-capabilities');
+              
+              if (contentDiv) {
+                setTimeout(() => {
+                  contentDiv.classList.add('animate-slide-in-left');
+                }, 100);
+              }
+              if (capabilitiesDiv) {
+                setTimeout(() => {
+                  capabilitiesDiv.classList.add('animate-slide-in-right');
+                }, 300);
+              }
+              
+              // Unobserve after animation is triggered
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+
+      observer.observe(ref);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
+
   return (
     <>
       {/* Hero */}
@@ -124,9 +167,12 @@ export default function ServicesPage() {
           id={service.id}
           className={i % 2 === 1 ? "bg-gradient-to-b from-dark via-slate-900/30 to-dark" : ""}
         >
-          <div className={`grid lg:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-            <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-              <div className="w-16 h-16 rounded-2xl bg-glass-blue/10 flex items-center justify-center text-glass-blue mb-6">
+          <div 
+            ref={(el) => { serviceRefs.current[i] = el; }}
+            className={`grid lg:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
+          >
+            <div className={`service-content ${i % 2 === 1 ? "lg:order-2" : ""}`}>
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-glass-blue/15 to-glass-blue/5 flex items-center justify-center text-glass-blue border border-glass-blue/20 shadow-[0_4px_16px_rgba(59,130,246,0.15),inset_0_1px_0_0_rgba(59,130,246,0.2)] mb-6">
                 {service.icon}
               </div>
               <h2 className="text-3xl lg:text-[36px] font-semibold text-white mb-4">
@@ -137,7 +183,7 @@ export default function ServicesPage() {
                 Get Started
               </Button>
             </div>
-            <div className={`glass-card p-8 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+            <div className={`glass-card p-8 service-capabilities ${i % 2 === 1 ? "lg:order-1" : ""}`}>
               <h3 className="text-lg font-semibold text-white mb-6">Key Capabilities</h3>
               <ul className="space-y-4" role="list">
                 {service.features.map((feature, fi) => (
