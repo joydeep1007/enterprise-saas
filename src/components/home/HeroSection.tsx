@@ -54,7 +54,7 @@ export default function HeroSection() {
               industry leaders who understand your vision.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 relative z-10">
               <Button variant="primary" size="lg" href="/contact">
                 Schedule Consultation
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent pointer-events-none" aria-hidden="true" />
     </section>
   );
 }

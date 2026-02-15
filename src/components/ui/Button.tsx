@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 type ButtonVariant = "primary" | "secondary" | "outline";
 type ButtonSize = "sm" | "md" | "lg";
@@ -39,9 +40,9 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes} role="button">
+      <Link href={href} className={classes}>
         {children}
-      </a>
+      </Link>
     );
   }
 

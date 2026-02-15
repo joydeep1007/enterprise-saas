@@ -62,7 +62,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] radial-glow" />
         </div>
-        <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center animate-fade-in-up">
           <p className="text-glass-blue text-sm uppercase tracking-widest font-semibold mb-4">
             About Us
           </p>
