@@ -18,11 +18,30 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#111827]/90 to-[#111827]/70 backdrop-blur-2xl border-b border-white/20 supports-[backdrop-filter]:bg-[#111827]/60 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/5 before:to-transparent before:pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-[0_8px_32px_rgba(0,20,60,0.4),0_1px_3px_rgba(0,0,0,0.2)] overflow-hidden"
       role="navigation"
       aria-label="Main navigation"
-      style={{ backdropFilter: 'blur(24px) saturate(180%)', WebkitBackdropFilter: 'blur(24px) saturate(180%)' }}
+      style={{ 
+        background: 'rgba(17, 24, 39, 0.4)',
+        backdropFilter: 'blur(28px) saturate(180%)', 
+        WebkitBackdropFilter: 'blur(28px) saturate(180%)' 
+      }}
     >
+      {/* Atmospheric blue glow effect - similar to Reflect */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-30"
+        style={{
+          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15) 0%, transparent 60%)'
+        }}
+      />
+      
+      {/* Subtle gradient overlay for glass effect */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.08]"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, transparent 100%)'
+        }}
+      />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -105,7 +124,14 @@ export default function Navbar() {
         }`}
         role="menu"
       >
-        <div className="px-6 py-4 space-y-3 border-t border-white/10 bg-gradient-to-b from-dark/95 to-dark/90 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]" style={{ backdropFilter: 'blur(24px) saturate(180%)', WebkitBackdropFilter: 'blur(24px) saturate(180%)' }}>
+        <div 
+          className="px-6 py-4 space-y-3 border-t border-white/10 shadow-[0_8px_32px_rgba(0,20,60,0.5)]" 
+          style={{ 
+            background: 'rgba(17, 24, 39, 0.6)',
+            backdropFilter: 'blur(28px) saturate(180%)', 
+            WebkitBackdropFilter: 'blur(28px) saturate(180%)' 
+          }}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
