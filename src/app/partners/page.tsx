@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
 export const metadata: Metadata = {
@@ -8,18 +9,18 @@ export const metadata: Metadata = {
 };
 
 const partners = [
-  { name: "Microsoft Azure", tier: "Platinum" },
-  { name: "Amazon Web Services", tier: "Premier" },
-  { name: "Google Cloud", tier: "Premier" },
-  { name: "Salesforce", tier: "Gold" },
-  { name: "Oracle", tier: "Gold" },
-  { name: "SAP", tier: "Silver" },
-  { name: "IBM", tier: "Platinum" },
-  { name: "Cisco", tier: "Gold" },
-  { name: "ServiceNow", tier: "Premier" },
-  { name: "Snowflake", tier: "Silver" },
-  { name: "Databricks", tier: "Silver" },
-  { name: "Palo Alto Networks", tier: "Gold" },
+  { name: "Microsoft Azure", tier: "Platinum", logo: "/azure.png" },
+  { name: "Amazon Web Services", tier: "Premier", logo: "/aws.png" },
+  { name: "Google Cloud", tier: "Premier", logo: "/gcp.png" },
+  { name: "Salesforce", tier: "Gold", logo: "/salesforce.png" },
+  { name: "Oracle", tier: "Gold", logo: "/oracle.png" },
+  { name: "SAP", tier: "Silver", logo: "/sap.png" },
+  { name: "IBM", tier: "Platinum", logo: "/ibm.png" },
+  { name: "Cisco", tier: "Gold", logo: "/cisco.png" },
+  { name: "ServiceNow", tier: "Premier", logo: "/servicenow.png" },
+  { name: "Snowflake", tier: "Silver", logo: "/snowflake.png" },
+  { name: "Databricks", tier: "Silver", logo: "/databricks.png" },
+  { name: "Palo Alto Networks", tier: "Gold", logo: "/paloalto.png" },
 ];
 
 const tierColors: Record<string, string> = {
@@ -55,21 +56,29 @@ export default function PartnersPage() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="glass-card p-8 flex flex-col items-center justify-center text-center group cursor-default"
+              className="relative glass-card p-6 sm:p-8 flex flex-col items-center justify-center text-center group cursor-default overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-glass-blue/20"
             >
-              {/* Placeholder logo */}
-              <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:bg-glass-blue/10 transition-colors">
-                <span className="text-2xl font-bold text-text-muted group-hover:text-glass-blue transition-colors">
-                  {partner.name
-                    .split(" ")
-                    .map((w) => w[0])
-                    .join("")
-                    .slice(0, 2)}
-                </span>
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-glass-blue/10 blur-2xl" />
               </div>
-              <h3 className="text-sm font-semibold text-white mb-2">{partner.name}</h3>
+              
+              {/* Logo Container */}
+              <div className="relative h-20 sm:h-24 w-full flex items-center justify-center p-4 mb-4">
+                <div className="relative max-h-16 sm:max-h-20 max-w-full h-full w-full">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    fill
+                    className="object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 150px, (max-width: 768px) 180px, 200px"
+                  />
+                </div>
+              </div>
+              
+              <h3 className="text-sm font-semibold text-white mb-2 relative z-10">{partner.name}</h3>
               <span
-                className={`text-xs font-medium bg-gradient-to-r ${tierColors[partner.tier]} bg-clip-text text-transparent`}
+                className={`text-xs font-medium bg-gradient-to-r ${tierColors[partner.tier]} bg-clip-text text-transparent relative z-10`}
               >
                 {partner.tier} Partner
               </span>
