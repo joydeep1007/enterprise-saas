@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-[0_8px_32px_rgba(0,20,60,0.4),0_1px_3px_rgba(0,0,0,0.2)] overflow-hidden"
+      className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/10 shadow-[0_8px_32px_rgba(0,20,60,0.4),0_1px_3px_rgba(0,0,0,0.2)] overflow-hidden"
       role="navigation"
       aria-label="Main navigation"
       style={{ 
@@ -42,8 +42,8 @@ export default function Navbar() {
           background: 'linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, transparent 100%)'
         }}
       />
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
-        <div className="flex items-center justify-between h-[80px]">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+        <div className="flex items-center justify-between h-[80px] w-full">
           {/* Logo */}
           <Link
             href="/"

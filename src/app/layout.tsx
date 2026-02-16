@@ -54,7 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="antialiased bg-dark text-text-light font-sans">
+      <body className="antialiased bg-dark text-text-light font-sans overflow-x-hidden">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-glass-blue focus:text-white focus:rounded-lg"
@@ -62,7 +62,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Navbar />
-        <main id="main-content" className="min-h-screen pt-[80px]">
+        <main id="main-content" className="min-h-screen pt-[80px] overflow-x-hidden w-full">
           {children}
         </main>
         <Footer />

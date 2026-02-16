@@ -31,11 +31,11 @@ export default function SectionWrapper({ children, className = "", id }: Section
     <section
       ref={ref}
       id={id}
-      className={`section-padding transition-all duration-700 ${
+      className={`section-padding transition-all duration-700 overflow-x-hidden ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       } ${className}`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {children}
       </div>
     </section>
