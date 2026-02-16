@@ -15,7 +15,7 @@ const companies = [
 
 export default function TrustedBySection() {
   return (
-    <section className="relative py-24 bg-dark overflow-hidden">
+<section className="relative py-24 bg-dark overflow-hidden">
       {/* Subtle gradient fade edges */}
       <div
         className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 lg:w-48"
