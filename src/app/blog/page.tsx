@@ -13,7 +13,7 @@ const posts = [
       "Explore how enterprises are adopting multi-cloud strategies to maximize flexibility, reduce vendor lock-in, and optimize costs across AWS, Azure, and GCP.",
     category: "Cloud",
     date: "2026-02-10",
-    imageUrl: "/api/placeholder/800/450",
+    imageUrl: "/multi_cloud_2026.png",
     href: "#",
   },
   {
@@ -22,7 +22,7 @@ const posts = [
       "A comprehensive guide to deploying zero-trust architecture across your organization, including identity verification, micro-segmentation, and continuous monitoring.",
     category: "Security",
     date: "2026-02-05",
-    imageUrl: "/api/placeholder/800/450",
+    imageUrl: "/zero_trust_security.png",
     href: "#",
   },
   {
@@ -31,7 +31,7 @@ const posts = [
       "From automated code generation to intelligent customer service, discover how generative AI is transforming business operations across every industry.",
     category: "AI & ML",
     date: "2026-01-28",
-    imageUrl: "/api/placeholder/800/450",
+    imageUrl: "/generative_ai_enterprise.png",
     href: "#",
   },
   {
@@ -40,7 +40,7 @@ const posts = [
       "Best practices for designing, deploying, and managing microservices at scale, including service mesh patterns and observability strategies.",
     category: "DevOps",
     date: "2026-01-20",
-    imageUrl: "/api/placeholder/800/450",
+    imageUrl: "/building_resilient_microservices.png",
     href: "#",
   },
   {
@@ -49,7 +49,7 @@ const posts = [
       "Learn how to define clear KPIs, track meaningful metrics, and demonstrate the business value of your digital transformation initiatives.",
     category: "Digital",
     date: "2026-01-15",
-    imageUrl: "/api/placeholder/800/450",
+    imageUrl: "/digital_transformation_roi_measuring.png",
     href: "#",
   },
   {
@@ -58,7 +58,7 @@ const posts = [
       "How edge computing is enabling real-time processing, reducing latency, and opening new possibilities for IoT and AI workloads.",
     category: "Cloud",
     date: "2026-01-08",
-    imageUrl: "/api/placeholder/800/450",
+    imageUrl: "/edge_computing_next_frontier.png",
     href: "#",
   },
 ];
