@@ -43,7 +43,7 @@ export default function Navbar() {
         }}
       />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
           <Link
             href="/"
@@ -61,18 +61,37 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8" role="menubar">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-text-muted hover:text-white transition-colors text-sm font-medium relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-glass-blue after:transition-all hover:after:w-full"
-                role="menuitem"
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Desktop Nav - Pill Container */}
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
+            {/* Radial glow behind pill */}
+            <div 
+              className="absolute inset-0 -z-10 blur-xl opacity-40"
+              style={{
+                background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.3) 0%, transparent 70%)'
+              }}
+            />
+            
+            {/* Pill-shaped navigation container */}
+            <div 
+              className="flex items-center gap-7 px-8 py-3 rounded-full border border-white/15 shadow-[0_4px_24px_rgba(0,20,60,0.3),inset_0_1px_2px_rgba(255,255,255,0.1)] transition-all duration-300 hover:border-white/25 hover:shadow-[0_6px_32px_rgba(59,130,246,0.2)]" 
+              role="menubar"
+              style={{
+                background: 'rgba(255, 255, 255, 0.06)',
+                backdropFilter: 'blur(16px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(16px) saturate(180%)'
+              }}
+            >
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-white/70 hover:text-white text-sm font-medium transition-all duration-300 relative whitespace-nowrap after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[1.5px] after:bg-blue-400 after:rounded-full after:transition-all after:duration-300 hover:after:w-full"
+                  role="menuitem"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Desktop CTA */}
