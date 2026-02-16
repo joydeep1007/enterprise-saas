@@ -42,12 +42,12 @@ export default function Navbar() {
           background: 'linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, transparent 100%)'
         }}
       />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
         <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group"
+            className="relative z-50 flex items-center gap-3 group"
             aria-label="ValuEZ Tech — Home"
           >
             <img 
@@ -95,7 +95,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden md:block relative z-40">
             <Button variant="primary" size="sm" href="/contact">
               Get Started
             </Button>
@@ -103,7 +103,7 @@ export default function Navbar() {
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden p-2 text-white"
+            className="relative z-50 md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors active:scale-95"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -114,19 +114,18 @@ export default function Navbar() {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              strokeWidth={2}
             >
               {isOpen ? (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
                   d="M6 18L18 6M6 6l12 12"
                 />
               ) : (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               )}
