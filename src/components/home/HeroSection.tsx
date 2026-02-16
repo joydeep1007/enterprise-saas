@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/Button";
+import DashboardMockup from "@/components/ui/DashboardMockup";
 
 export default function HeroSection() {
   return (
@@ -67,63 +68,9 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right - Floating tech illustration */}
+          {/* Right - Modern Dashboard Mockup */}
           <div className="hidden lg:flex justify-center items-center relative" aria-hidden="true">
-            <div className="relative w-full max-w-md">
-              {/* Main floating card */}
-              <div className="glass-card p-8 animate-float">
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="glass rounded-xl p-4 text-center">
-                    <div className="text-2xl font-bold text-glass-blue">99.9%</div>
-                    <div className="text-xs text-text-muted mt-1">Uptime SLA</div>
-                  </div>
-                  <div className="glass rounded-xl p-4 text-center">
-                    <div className="text-2xl font-bold text-accent-glow">3x</div>
-                    <div className="text-xs text-text-muted mt-1">ROI Average</div>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="h-2 rounded-full bg-white/5 overflow-hidden">
-                    <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-glass-blue to-accent-glow" />
-                  </div>
-                  <div className="h-2 rounded-full bg-white/5 overflow-hidden">
-                    <div className="h-full w-[65%] rounded-full bg-gradient-to-r from-accent-glow to-blue-400" />
-                  </div>
-                  <div className="h-2 rounded-full bg-white/5 overflow-hidden">
-                    <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-glass-blue to-accent-glow" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating small cards */}
-              <div className="absolute -top-8 -left-8 glass rounded-2xl p-4 animate-float delay-200 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_0_rgba(255,255,255,0.15)]">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500/20 to-green-500/10 border border-green-500/30 flex items-center justify-center shadow-[0_4px_12px_rgba(34,197,94,0.2)]">
-                    <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-white">Deployment</div>
-                    <div className="text-xs text-green-400">Successful</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-4 -right-8 glass rounded-2xl p-4 animate-float delay-400 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_0_rgba(255,255,255,0.15)]">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-glass-blue/25 to-glass-blue/10 border border-glass-blue/40 flex items-center justify-center shadow-[0_4px_12px_rgba(59,130,246,0.3)]">
-                    <svg className="w-5 h-5 text-glass-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-white">Analytics</div>
-                    <div className="text-xs text-glass-blue">+47% Growth</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <DashboardMockup />
           </div>
         </div>
       </div>
