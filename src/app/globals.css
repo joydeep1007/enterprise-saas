@@ -501,7 +501,7 @@ select:focus {
 }
 
 .marquee-track {
-  animation: marqueeScroll 28s linear infinite;
+  animation: marqueeScroll 45s linear infinite;
   will-change: transform;
 }
 
@@ -513,6 +513,6 @@ select:focus {
 /* Responsive: slightly faster on small screens */
 @media (max-width: 640px) {
   .marquee-track {
-    animation-duration: 18s;
+    animation-duration: 30s;
   }
 }

@@ -70,7 +70,7 @@ export default function PartnersPage() {
                     src={partner.logo}
                     alt={`${partner.name} logo`}
                     fill
-                    className="object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                    className="object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
                     sizes="(max-width: 640px) 150px, (max-width: 768px) 180px, 200px"
                   />
                 </div>

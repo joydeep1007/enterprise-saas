@@ -1,66 +1,70 @@
 "use client";
 
+import Image from "next/image";
+
 const companies = [
-  "Microsoft",
-  "AWS",
-  "Google Cloud",
-  "Salesforce",
-  "Oracle",
-  "SAP",
-  "IBM",
-  "Cisco",
+  { name: "Microsoft", logo: "/azure.png" },
+  { name: "AWS", logo: "/aws.png" },
+  { name: "Google Cloud", logo: "/gcp.png" },
+  { name: "Salesforce", logo: "/salesforce.png" },
+  { name: "Oracle", logo: "/oracle.png" },
+  { name: "SAP", logo: "/sap.png" },
+  { name: "IBM", logo: "/ibm.png" },
+  { name: "Cisco", logo: "/cisco.png" },
 ];
 
 export default function TrustedBySection() {
   return (
-    <section className="relative py-16 bg-dark border-y border-white/5 overflow-hidden">
-      {/* Header */}
-      <div className="text-center mb-10">
-        <p className="text-text-muted text-sm uppercase tracking-widest font-medium">
-          Trusted by industry leaders worldwide
-        </p>
-      </div>
-
-      {/* Gradient fade masks — left & right edges */}
+    <section className="relative py-24 bg-dark overflow-hidden">
+      {/* Subtle gradient fade edges */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 sm:w-40"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 lg:w-48"
         style={{
           background:
             "linear-gradient(to right, #111827 0%, transparent 100%)",
         }}
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 sm:w-40"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 lg:w-48"
         style={{
           background:
             "linear-gradient(to left, #111827 0%, transparent 100%)",
         }}
       />
 
-      {/* Scrolling track */}
-      <div
-        className="group relative flex"
-        role="list"
-        aria-label="Client logos"
-      >
-        {/* We render the list twice so the second copy seamlessly follows the first */}
-        {[0, 1].map((copy) => (
-          <div
-            key={copy}
-            className="marquee-track flex shrink-0 items-center gap-16 sm:gap-24 md:gap-32 pr-16 sm:pr-24 md:pr-32"
-            aria-hidden={copy === 1 ? true : undefined}
-          >
-            {companies.map((name) => (
-              <span
-                key={name}
-                role="listitem"
-                className="whitespace-nowrap text-lg sm:text-xl md:text-2xl font-semibold tracking-wider text-white/[0.35] opacity-70 select-none transition-all duration-300 hover:text-white hover:opacity-100 cursor-default"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-        ))}
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="text-text-muted text-xs sm:text-sm uppercase tracking-widest font-medium">
+            Trusted by industry leaders worldwide
+          </p>
+        </div>
+
+        {/* Marquee Container */}
+        <div className="group relative flex">
+          {/* Render logos twice for seamless infinite loop */}
+          {[0, 1].map((copy) => (
+            <div
+              key={copy}
+              className="marquee-track flex shrink-0 items-center gap-16 lg:gap-20 pr-16 lg:pr-20"
+            >
+              {companies.map((company, index) => (
+                <div
+                  key={`${company.name}-${index}`}
+                  className="relative h-12 w-32 sm:w-36 lg:w-40 flex items-center justify-center group/logo"
+                >
+                  <Image
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    fill
+                    className="object-contain opacity-60 group-hover/logo:opacity-100 transition-opacity duration-300"
+                    sizes="(max-width: 640px) 128px, (max-width: 1024px) 144px, 160px"
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
